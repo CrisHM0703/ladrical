@@ -1,36 +1,28 @@
-<footer class="page-footer fixed-bottom  text-center font-small warning-color-dark mt-4 wow fadeIn ">
-    <!--Copyright-->
-    <div class="footer-copyright py-2">
-        © 2022 Copyright:
-        <a href="" target="_blank">DEVELOPERS 9</a>
-    </div>
-    <!--/.Copyright-->
-</footer>
-<!--/.Footer-->
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="../public/layout/js/jquery-3.4.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="../public/layout/js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="../public/layout/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="../public/layout/js/mdb.min.js"></script>
-<!-- jQuery, Popper.js, For Datatables -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0
+        </div>
+        <strong>Copyright &copy; 2022</strong>
+    </footer>    
+    <!-- jQuery -->
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../public/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../public/js/app.min.js"></script>
 
-<!-- datatables JS -->
-<script type="text/javascript" src="../public/layout/datatables/datatables.min.js"></script>
-<script type="text/javascript" src="../public/layout/datatables/main.js"></script>
+    <!-- DATATABLES -->
+    <script src="../public/datatables/jquery.dataTables.min.js"></script>    
+    <script src="../public/datatables/dataTables.buttons.min.js"></script>
+    <script src="../public/datatables/buttons.html5.min.js"></script>
+    <script src="../public/datatables/buttons.colVis.min.js"></script>
+    <script src="../public/datatables/jszip.min.js"></script>
+    <script src="../public/datatables/pdfmake.min.js"></script>
+    <script src="../public/datatables/vfs_fonts.js"></script> 
 
-<!-- Initializations -->
-<script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
-    // Tooltips Initialization
-    $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
-</body>
-
+    <script src="../public/js/bootbox.min.js"></script> 
+    <script src="../public/js/bootstrap-select.min.js"></script>
+    <!-- sweetalert2 -->
+ <script src="../public/js/sweetalert.min.js"></script>  
+  </body>
 </html>

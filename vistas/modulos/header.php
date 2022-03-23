@@ -14,177 +14,162 @@ if (strlen(session_id()) < 1)
   };
 
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>LADRICAL </title>
-  <!-- Favicons-->
-  <link rel="icon" href="../public/layout/images/favicon/logo1.png" sizes="32x32">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="../public/layout/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="../public/layout/css/mdb.min.css" rel="stylesheet">
-  <!--datables CSS básico-->
-  <link rel="stylesheet" type="text/css" href="../public/layout/datatables/datatables.min.css" />
-  <!--datables estilo bootstrap 4 CSS-->
-  <link rel="stylesheet" type="text/css" href="../public/layout/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
-  <!-- Your custom styles optional -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <link href="../public/layout/css/style.min.css" rel="stylesheet">
-  <link href="../public/layout/css/style.css" rel="stylesheet">
-  <link href="../public/layout/css/myEstilos.css" rel="stylesheet">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php echo $nombrenegocio; ?> | Administrable</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../public/css/font-awesome.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../public/css/_all-skins.min.css">
+    <link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
 
- <body class="plata">
-  <!-- No tocar sirve para el responsive ojo eh! -->
-  <style>
-    @media handheld,
-    only screen and (min-width: 767px) {
-      .ls-container {
-        display: none;
-      }
-    }
+    <!-- DATATABLES -->
+    <link rel="stylesheet" type="text/css" href="../public/datatables/jquery.dataTables.min.css">    
+    <link href="../public/datatables/buttons.dataTables.min.css" rel="stylesheet"/>
+    <link href="../public/datatables/responsive.dataTables.min.css" rel="stylesheet"/>
 
-    @media only screen and (min-width: 1023px) {
-      .ls-container {
-        display: none;
-      }
-    }
-  </style>
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.min.css">
+
+    <!-- sweetalert2 -->
+  <link rel="stylesheet" href="../public/css/sweetalert.min.css" />
 
   </head>
-  <header>
-      <!--
-      ========================================================
-      							 Navbar
-      ========================================================
-        -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light  warning-color-dark scrolling-navbar py-2">
-      <div class="container-fluid">
+  <body class="hold-transition skin-blue sidebar-mini">
 
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="">
-          <strong class="white-text"><b>LADRICAL</b></strong>
+
+
+    <div class="wrapper">
+
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>TN</b></span>
+          <b>"LADRICAL"</b>
+          <!-- logo for regular state and mobile devices -->
+          <!-- <img src="../files/AgroNegocios.png"> -->
         </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Navegación</span>
+          </a>
 
-        <form class="d-none d-md-flex input-group w-auto my-auto">
-          <input autocomplete="off" type="search" class="form-control rounded" placeholder='Buscar...' style="min-width: 555px" />
-        </form>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav ml-auto">
 
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <!-- Left -->
-          <ul class="navbar-nav mr-auto">
-            <div class="ls-container">
-              <li class="nav-item active">
-                <a class="nav-link waves-effect" href="">Inicio
-                  <span class="sr-only">(current)</span>
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="../files/personal/<?php echo $_SESSION['imagen']; ?>" class="user-image" alt="User Image">
+                  <span class="hidden-xs"><?php echo $_SESSION['nombre']; ?></span>
+                  <b class="caret"></b>
                 </a>
+                <ul class="dropdown-menu">
+                  <li class="user-header">
+
+                    <p style="margin-top: 50px;">
+                      LADRICAL
+                      <small>V 2.0</small>
+                    </p>
+                  </li>
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    
+                    <div class="pull-right">
+                      <a href="../controladores/usuario.php?op=salir" class="btn btn-default btn-flat"><i class="fa fa-lock"></i> Cerrar sesión</a>
+                    </div>
+                  </li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect" href="">Regitro de caso</a>
-              </li>     
-            </div>
-          </ul>
+              <!-- Control Sidebar Toggle Button -->
 
-          <!-- Right -->
-          <ul class="navbar-nav nav-flex-icons">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-5">
+            </ul>
+          </div>
+
+        </nav>
+
+
+      </header>
+      
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <br>
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="../files/personal/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
             </div>
-            <li class="nav-item avatar dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="../public/layout/images/favicon/logo1.png" class="rounded-circle z-depth-0" alt="avatar image" height="30px">
+            <div class="pull-left info">
+              <p><?php echo $_SESSION['nombre']; ?></p>
+              <a href="#"><i class="fa fa-circle text-success"></i> En línea</a>
+            </div>
+          </div>
+          <br>
+
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header text-center">MENÚ DE NAVEGACIÓN</li>
+
+            <?php 
+            if ($_SESSION['inicio']==1)
+            {
+              echo '<li id="navInicio">
+              <a href="inicio.php">
+                <i class="fa fa-home"></i> <span>Inicio</span>
               </a>
-              <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-55">
+            </li>';
+            }
+            ?>
+                   
+            <?php 
+            if ($_SESSION['almacen']==1)
+            {
+              echo '<li class="treeview" id="navAlmacen">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Almacén</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu" id="navAlmacen">
+                <li id="navProducto"><a href="producto.php" id="navProducto"><i class="fa fa-plus-circle"></i> Productos</a></li>
+                <li id="navCategoria"><a href="categoria.php"><i class="fa fa-plus-circle"></i> Categorías</a></li>
+              </ul>
+            </li>';
+            }
+            ?>
+            <?php 
+            if ($_SESSION['personal']==1)
+            {
+              echo '<li class="treeview" id="navPersonal">
+              <a href="#">
+                <i class="fa fa-user"></i> <span>Personal</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
                 
-                <a class="dropdown-item" href="../controladores/usuario.php?op=salir"><i class="fas fa-sign-out-alt mr-3"></i>Cerrar Sesión</a>
-
                 
-
-
-              </div>
-            </li>
+              </ul>
+            </li>';
+            }
+            ?>    
           </ul>
-        </div>
-      </div>
-    </nav>
-    <!--
-      ========================================================
-      							 Navbar Fin
-      ========================================================
-        -->
-
-<!-- ESTE CSS NOS SIRVE PARA PONER AL SIDEBAR IMAGEN -->
-<style>
-      body,
-      html {
-        height: 100%;
-      }
-      .bg {
-        /* The image used */
-        background-image: url("../public/layout/images/avatar/frio.png");
-
-        /* Full height */
-        height: 100%;
-
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .plata {
-
-background-color: #f0f5fd;
-}
-    </style>
-
-     <!--
-      ========================================================
-      							 Sidebar 
-      ========================================================
-        -->
-   <br>  
-    <div class="sidebar-fixed position-fixed bg  mt-lg-5 " style="height: 545px;">
-      <br>
-      <div class="list-group list-group-flush ">
-        <div class="container">
-        <br> <br> <br><br><br>  
-          <a href="" class="waves-effect  pink-text darken-4">
-            
-
-            <button type="button" class="btn btn-outline-danger waves-effect"><i class="mr-2 fas fa-city  "></i><b>PRODUCTOS</b></a></button>
-        </div>
-      </div>
-    </div>
-     <!--
-      ========================================================
-      							 Sidebar  Fin
-      ========================================================
-        -->
-  </header>
-
-
-
-
-
-
-
-
-
-
-          
-
-            
-
-         
-            
+        </section>
+        <!-- /.sidebar -->
+      </aside>
